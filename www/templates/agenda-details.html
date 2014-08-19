@@ -1,0 +1,36 @@
+<ion-view title="Agenda">
+    <ion-content class="has-header">
+        <div class="list card">
+
+            <div class="item item-avatar">
+                <img src="../img/rs-logo.jpg">
+                <h2>{{agenda.title}}</h2>
+                <p>{{agenda.date}}</p>
+            </div>
+
+            <div class="item item-body">
+                <img class="full-image" src="{{agenda.imageUrl}}">
+                <p>Musik: {{agenda.music}}</p>
+                <p><a href="{{agenda.facebookUrl}}">Auf Facebook anzeigen</a></p>
+
+                <span ng-bind-html="agenda.description"></span>
+            </div>
+
+            <!--<div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                    <i class="icon ion-thumbsup"></i>
+                    Like
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i>
+                    Comment
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+            </div>-->
+
+        </div>
+    </ion-content>
+</ion-view>

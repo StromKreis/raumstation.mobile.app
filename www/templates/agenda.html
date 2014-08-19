@@ -1,0 +1,16 @@
+<ion-view title="Agenda">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        
+        <ion-list>
+            <ion-item class="item item-thumbnail-left" ng-repeat="agenda in agendas" href="#/app/agenda/{{agenda.id}}">
+                <img src="{{agenda.imageUrl}}">
+                <h2>{{agenda.title}}</h2>
+                <p>{{agenda.date}}</p>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
