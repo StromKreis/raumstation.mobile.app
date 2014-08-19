@@ -13,7 +13,7 @@ angular.module('starter.controllers', [])
             $scope.agendas.push({
                 id: value.Id,
                 title: value.Name,
-                date: moment(value.Date).format('DD. MMMM YYYY - HH:mm') + ' Uhr',
+                date: value.Date,
                 imageUrl: value.FlyerUrl,
                 description: value.Description,
                 externalEvent: value.ExtrenalEvent,
@@ -33,7 +33,7 @@ angular.module('starter.controllers', [])
         $scope.agenda = {
             id: retValues.Id,
             title: retValues.Name,
-            date: moment(retValues.Date).format('DD. MMMM YYYY - HH:mm') + ' Uhr',
+            date: retValues.Date,
             imageUrl: retValues.FlyerUrl,
             description: retValues.Description,
             externalEvent: retValues.ExtrenalEvent,
