@@ -70,6 +70,35 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('ContactCtrl', function ($scope, $http) {
+
+    $scope.sendForm = function () {
+        
+        $scope.loading = true;
+        $scope.addMode = true;
+
+        $scope.formModel = {
+            Name: $('#name').val(),
+            Email: $('#email').val(),
+            Subject: $('#thema').val(),
+            Message: $('#message').val()
+        };
+
+        $http.post(agendaServiceUrl + 'contact/postcontact', JSON.stringify(this.formModel)).success(function (data) {
+            $scope.addMode = true;
+            $scope.apiData = data;
+            $scope.loading = true;
+
+        }).error(function (data) {
+                $scope.message = {
+                    status: data.Status,
+                    text: 'An Error has occured while Searching References! Error message: ' + data.Message
+                };
+                $scope.loading = true;
+            });
+    }
+    })
+
 .controller('ResidenceCtrl', function($scope, $http) {
     
     $scope.artists = [];
